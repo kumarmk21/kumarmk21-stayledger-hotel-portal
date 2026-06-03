@@ -1,0 +1,13 @@
+{
+  "name": "liteapi-custom-hotel-portal",
+  "version": "1.0.0",
+  "description": "Custom hotel booking portal starter powered by LiteAPI.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "deploy:cloudflare": "npx wrangler pages deploy public --project-name stayledger-hotel-portal --branch main"
+  },
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}

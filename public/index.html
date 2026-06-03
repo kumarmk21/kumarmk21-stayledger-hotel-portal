@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StayLedger Hotel Portal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><strong>StayLedger</strong><nav><a href="#search">Search</a><a href="#dashboard">Dashboard</a></nav></header>
+  <main>
+    <section class="hero" id="search">
+      <div><p class="eyebrow">Custom LiteAPI booking portal</p><h1>Search, sell, and manage hotel bookings.</h1><p>Sandbox-ready portal with Supabase and Cloudflare Pages support.</p></div>
+      <form id="searchForm" class="panel"><label>Destination<input name="city" value="Dubai"></label><label>Check-in<input name="checkin" type="date"></label><label>Check-out<input name="checkout" type="date"></label><label>Guests<input name="guests" type="number" value="2"></label><button>Search hotels</button></form>
+    </section>
+    <section class="status"><div><span>Environment</span><b id="modeStatus">Sandbox</b></div><div><span>API keys</span><b id="keyStatus">Sample mode</b></div><div><span>Commission</span><b id="commissionStatus">12%</b></div></section>
+    <section><h2>Available hotels</h2><div id="hotelGrid" class="grid"></div></section>
+    <section id="dashboard"><h2>Booking dashboard</h2><div class="status"><div><span>Total bookings</span><b id="bookingCount">0</b></div><div><span>Revenue</span><b id="bookingRevenue">$0</b></div><div><span>Commission</span><b id="bookingCommission">$0</b></div><div><span>Confirmed</span><b id="bookingConfirmed">0</b></div></div><table><tbody id="bookingRows"></tbody></table></section>
+  </main>
+  <aside id="drawer" class="drawer"><div><button id="closeDrawer">×</button><div id="drawerContent"></div></div></aside>
+  <script src="/app.js"></script>
+</body>
+</html>

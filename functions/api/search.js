@@ -1,0 +1,2 @@
+import { json, sampleHotels } from '../_shared/data.js';
+export function onRequestGet({request,env}){const url=new URL(request.url),city=(url.searchParams.get('city')||'').trim().toLowerCase(),hasLiteApi=Boolean(env.LITEAPI_SANDBOX_KEY||env.LITEAPI_PRODUCTION_KEY);const hotels=sampleHotels.filter(h=>!city||h.city.toLowerCase().includes(city)||h.country.toLowerCase().includes(city));return json({hotels:hotels.length?hotels:sampleHotels,source:hasLiteApi?'liteapi-ready':'sample'})}

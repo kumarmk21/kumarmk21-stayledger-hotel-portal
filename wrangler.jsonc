@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "stayledger-hotel-portal",
+  "compatibility_date": "2026-06-03",
+  "pages_build_output_dir": "public",
+  "vars": {
+    "LITEAPI_MODE": "sandbox",
+    "DEFAULT_COMMISSION_RATE": "0.12",
+    "SUPABASE_URL": "https://cuyowwvrlqxhlnjtsbvg.supabase.co"
+  }
+}

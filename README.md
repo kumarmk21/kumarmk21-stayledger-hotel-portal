@@ -1,15 +1,8 @@
 # LiteAPI Custom Hotel Portal
 
-This is a custom hotel booking portal starter with:
+Custom hotel booking portal starter with Supabase schema, Cloudflare Pages Functions, LiteAPI-ready backend placeholders, booking dashboard, and commission tracking.
 
-- Search-first customer experience
-- LiteAPI-ready backend proxy
-- Sample hotel data for development before keys are added
-- User account UI placeholders
-- Booking checkout flow
-- Booking and commission dashboard
-
-## Start
+## Local Start
 
 ```bash
 npm start
@@ -17,21 +10,16 @@ npm start
 
 Open `http://localhost:3000`.
 
-## Configure LiteAPI
-
-Copy `.env.example` to `.env` and add your LiteAPI sandbox key first:
-
-```bash
-cp .env.example .env
-```
-
-The current backend keeps working with sample data if no key is present. Once your LiteAPI endpoint details and credentials are finalized, replace the placeholder LiteAPI calls in `server.js` with the exact endpoints for your account setup.
-
 ## Supabase
 
-The database schema is in `supabase/schema.sql`. It creates profiles, settings, hotel cache, searches, prebookings, bookings, guests, commission ledger, and webhook event tables with row-level security enabled.
+The Shantisphere project schema is in `supabase/schema.sql`.
 
-For Cloudflare deployment, set these environment variables in Cloudflare Pages:
+Project URL:
+`https://cuyowwvrlqxhlnjtsbvg.supabase.co`
+
+## Cloudflare Pages
+
+Set these Cloudflare Pages variables/secrets before production deployment:
 
 - `SUPABASE_URL`
 - `SUPABASE_SERVICE_ROLE_KEY`
@@ -40,18 +28,8 @@ For Cloudflare deployment, set these environment variables in Cloudflare Pages:
 - `LITEAPI_MODE`
 - `DEFAULT_COMMISSION_RATE`
 
-## Cloudflare Pages
-
-The project includes Cloudflare Pages Functions in `functions/` and a `wrangler.jsonc` config. Deploy with:
+Deploy:
 
 ```bash
 npm run deploy:cloudflare
 ```
-
-## Suggested Next Production Pieces
-
-- Real authentication provider
-- Database persistence
-- Payment SDK integration
-- Webhook endpoint for booking status changes
-- Production monitoring and audit logs

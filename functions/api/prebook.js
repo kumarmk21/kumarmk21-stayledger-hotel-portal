@@ -1,0 +1,2 @@
+import { json, sampleHotels } from '../_shared/data.js';
+export async function onRequestPost({request}){const body=await request.json(),hotel=sampleHotels.find(i=>i.id===body.hotelId)||sampleHotels[0];return json({prebookId:`PB-${crypto.randomUUID().slice(0,8).toUpperCase()}`,expiresInMinutes:15,hotel,price:hotel.price,taxes:Math.round(hotel.price*.14),total:Math.round(hotel.price*1.14),paymentMethods:['ACC_CREDIT_CARD','PAYMENT_SDK']})}
